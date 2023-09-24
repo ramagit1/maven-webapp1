@@ -32,12 +32,12 @@
 		<repository>
 			<id>nexus</id>
 			<name>Nexus Release Repository</name>
-			<url>${nexus.host.url}/repository/maven-hosted-release/</url>
+			<url>${nexus.host.url}/repository/maven-releases/</url>
 		</repository>
 		<snapshotRepository>
 			<id>nexus</id>
 			<name>Nexus Snapshot Repository</name>
-			<url>${nexus.host.url}/repository/maven-snapshots/</url>
+			<url>${nexus.host.url}/repository/maven-pull-Snapshot/</url>
 		</snapshotRepository>
 	</distributionManagement>
  <build>
