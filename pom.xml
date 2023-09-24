@@ -17,6 +17,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
+    <nexus.host.url>http://192.168.242.137:8081</nexus.host.url>
   </properties>
 
   <dependencies>
@@ -27,8 +28,19 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <build>
+  <distributionManagement>
+		<repository>
+			<id>nexus</id>
+			<name>Nexus Release Repository</name>
+			<url>${nexus.host.url}/repository/maven-hosted-release/</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus</id>
+			<name>Nexus Snapshot Repository</name>
+			<url>${nexus.host.url}/repository/maven-snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+ <build>
     <finalName>demo</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
